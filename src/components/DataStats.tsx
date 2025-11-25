@@ -3,7 +3,7 @@ import dashboardImage from 'figma:asset/e3448a7b2e003d929ecc87f31321be5e1483afa4
 export function DataStats() {
   return (
     <div className="bg-white py-12 sm:py-24 border-t border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl xl:max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-16">
           <h2 className="text-2xl sm:text-4xl text-gray-900 mb-4 sm:mb-4 font-bold px-2">
             컨설턴트들이 사용하는 분석기,

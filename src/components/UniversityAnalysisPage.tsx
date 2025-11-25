@@ -270,7 +270,7 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20 pretendard-text">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
+      <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
         {/* Header */}
         <div className="mb-6 sm:mb-8">
           <div className="flex items-center justify-between mb-4 sm:mb-6">
@@ -292,7 +292,7 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
         </div>
 
         {/* 모바일: 세로 스택, 데스크탑: 3단 그리드 */}
-        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-3 xl:grid-cols-[400px_1fr] gap-6 lg:gap-8">
           {/* Left Panel - 학과 목록 */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-6 lg:sticky lg:top-24">

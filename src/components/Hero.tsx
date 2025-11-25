@@ -153,7 +153,7 @@ export function Hero({ onStartClick }: HeroProps) {
       </div>
 
       {/* University Showcase - moved up */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16">
+      <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl text-gray-900 mb-2 sm:mb-3 font-bold">주요 54개 대학 분석 지원</h2>
           <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4">
@@ -168,7 +168,7 @@ export function Hero({ onStartClick }: HeroProps) {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-3 sm:gap-4 md:gap-6 mb-8 sm:mb-12">
           {universities.map((university) => (
             <div
               key={university.id}

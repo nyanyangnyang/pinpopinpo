@@ -112,7 +112,7 @@ export function ScoreInputForm({ onSubmit, onBack, savedScores }: ScoreInputForm
               <h2 className="text-lg text-gray-900">기본 정보</h2>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
               <div>
                 <label className="block text-sm text-gray-700 mb-2">
                   이름 <span className="text-red-500">*</span>

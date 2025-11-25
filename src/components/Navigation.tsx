@@ -109,8 +109,8 @@ export function Navigation({ onScoreInputClick, onUniversitySelectionClick, onHo
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16">
+        <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
             <button 
               onClick={onHomeClick}
               className="hover:opacity-80 transition-opacity"
@@ -118,39 +118,39 @@ export function Navigation({ onScoreInputClick, onUniversitySelectionClick, onHo
               <img 
                 src={pinpointLogo} 
                 alt="pinpoint" 
-                className="h-8 sm:h-10"
+                className="h-8 sm:h-10 lg:h-12"
               />
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-6 lg:gap-8">
               <button
                 onClick={handleServiceClick}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
               >
                 서비스 소개
               </button>
               <button
                 onClick={handleScoreInputClick}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
               >
                 성적 입력
               </button>
               <button
                 onClick={handleUniversitySelectionClick}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
               >
                 핀포인트 AI 합격 예측
               </button>
               <button
                 onClick={handlePricingClickInternal}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
               >
                 가격안내
               </button>
               <button
                 onClick={handleAIStrategyClick}
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                className="text-gray-700 hover:text-blue-600 transition-colors font-medium text-sm lg:text-base"
               >
                 원서 조합 짜기
               </button>

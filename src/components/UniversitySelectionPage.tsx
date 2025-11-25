@@ -181,7 +181,7 @@ export function UniversitySelectionPage({ onSubmit, onScoreInput }: UniversitySe
 
   return (
     <div className="min-h-screen bg-white pt-24 pb-12 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         {/* 헤더 */}
         <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl text-gray-900 mb-3 font-bold">핀포인트 AI 합격 예측</h1>
@@ -342,12 +342,12 @@ export function UniversitySelectionPage({ onSubmit, onScoreInput }: UniversitySe
               <p>검색 결과가 없습니다</p>
             </div>
           ) : (
-            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
               {filteredUniversities.map((university) => (
                 <button
                   key={university.id}
                   onClick={() => handleUniversitySelect(university.id)}
-                  className={`bg-white border-2 rounded-2xl sm:rounded-3xl p-4 sm:p-6 flex flex-col items-center justify-center gap-2 sm:gap-3 transition-all hover:scale-105 hover:shadow-xl aspect-square ${
+                  className={`bg-white border-2 rounded-2xl sm:rounded-3xl p-4 sm:p-5 lg:p-6 flex flex-col items-center justify-center gap-2 sm:gap-3 transition-all hover:scale-105 hover:shadow-xl active:scale-95 aspect-square ${
                     selectedUniversity === university.id
                       ? 'border-blue-500 shadow-xl'
                       : 'border-gray-200 hover:border-blue-300'
