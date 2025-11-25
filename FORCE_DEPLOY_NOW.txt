@@ -1,0 +1,3 @@
+FORCE VERCEL TO FETCH LATEST COMMITS
+Timestamp: 2024-11-25
+Latest commit should include Naver verification code: 84dd6833bce636a784d996e429e2c60d2bbabaf2
