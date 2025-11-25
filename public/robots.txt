@@ -1,0 +1,28 @@
+# pinpoint - 대학 합격 예측 분석 서비스
+# https://pinpoint.vercel.app
+
+User-agent: *
+Allow: /
+
+# 주요 페이지
+Allow: /score-input
+Allow: /university-selection
+Allow: /pricing
+Allow: /ai-strategy
+
+# 사이트맵
+Sitemap: https://pinpoint.vercel.app/sitemap.xml
+
+# 크롤링 속도 (선택사항)
+Crawl-delay: 1
+
+# 특정 봇 설정
+User-agent: Yeti
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
