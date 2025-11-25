@@ -16,7 +16,7 @@ export function Footer() {
         {/* 회사 정보 */}
         <div className="space-y-3 text-xs sm:text-sm text-gray-600 leading-relaxed">
           <p>
-            (주)핀포인트데이터랩 | 대표이사 권민재 | 사업자 등록번호 847-86-02581 | 서울특별시 강남구 압구정로2길 46, 214-S23호
+            (주)핀포인트데이터랩 | 대표이사 권민재 | 사업자 등록번호 879-42-01142 | 서울특별시 강남구 압구정로2길 46, 214-S23호
           </p>
           <p>
             contact@pinpointdata.co.kr | 개인정보보호 책임자 권민재 | 호스팅서비스 Amazon Web Services
