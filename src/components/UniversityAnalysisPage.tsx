@@ -390,12 +390,12 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
               </div>
 
               {/* Department List */}
-              <div className="space-y-2 max-h-[400px] sm:max-h-[500px] overflow-y-auto">
+              <div className="space-y-2 sm:space-y-3 max-h-[400px] sm:max-h-[500px] overflow-y-auto">
                 {filteredDepartments.map((dept: any, index: number) => (
                   <button
                     key={dept.dept_id || index}
                     onClick={() => setSelectedDept(dept)}
-                    className="w-full p-2.5 sm:p-3 hover:bg-gray-50 rounded-lg transition-colors text-left"
+                    className="w-full p-3 sm:p-4 hover:bg-blue-50 hover:border-blue-200 border-2 border-transparent rounded-xl transition-all duration-200 text-left hover:shadow-md hover:scale-[1.01] active:scale-[0.99]"
                   >
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <div className="flex-1 min-w-0">
@@ -491,7 +491,7 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
         </div>
       </div>
 
-      {/* Bottom Sheet */}
+      {/* Department Detail Modal (Desktop) / Bottom Sheet (Mobile) */}
       {selectedDept && (
         <>
           {/* Backdrop */}
@@ -500,23 +500,24 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
             onClick={() => setSelectedDept(null)}
           />
           
-          {/* Sheet */}
-          <div className="fixed inset-x-0 bottom-0 z-50 bg-white rounded-t-3xl shadow-2xl animate-slide-up max-h-[65vh] overflow-y-auto">
-            <div className="p-5 sm:p-6">
-              {/* Handle */}
-              <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-5" />
+          {/* Desktop: Modal (Center) / Mobile: Bottom Sheet */}
+          <div className="fixed inset-x-0 md:inset-0 md:flex md:items-center md:justify-center bottom-0 md:bottom-auto z-50 md:p-4">
+            <div className="bg-white rounded-t-3xl md:rounded-2xl shadow-2xl animate-slide-up md:animate-scale-in max-h-[85vh] md:max-h-[90vh] overflow-y-auto md:max-w-2xl md:w-full md:mx-auto">
+            <div className="p-5 sm:p-6 md:p-8">
+              {/* Handle (Mobile only) */}
+              <div className="w-12 h-1 bg-gray-300 rounded-full mx-auto mb-5 md:hidden" />
               
               {/* Close Button */}
               <button
                 onClick={() => setSelectedDept(null)}
-                className="absolute top-3 right-3 p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="absolute top-3 right-3 md:top-4 md:right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
               >
-                <X className="w-5 h-5 text-gray-400" />
+                <X className="w-5 h-5 text-gray-500 hover:text-gray-700" />
               </button>
 
               {/* Department Info */}
-              <div className="mb-5 pb-5 border-b border-gray-100">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 pr-8">{selectedDept.name}</h3>
+              <div className="mb-5 pb-5 border-b border-gray-200">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 md:mb-3 pr-8">{selectedDept.name}</h3>
                 <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
                   <span className="font-semibold">{getGroupLabel(selectedDept.group)}</span>
                   <span>·</span>
@@ -527,7 +528,7 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
               </div>
 
               {/* Probability */}
-              <div className="mb-3 p-5 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl border border-gray-100">
+              <div className="mb-4 md:mb-5 p-5 md:p-6 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl border border-gray-200">
                 <div className="text-xs sm:text-sm font-semibold text-gray-600 mb-2">합격 가능성</div>
                 <div className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                   {selectedDept.probability.toFixed(1)}<span className="text-lg sm:text-xl font-semibold text-gray-500">%</span>
@@ -550,7 +551,7 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
               </div>
 
               {/* User Score */}
-              <div className="mb-4 p-5 bg-gradient-to-br from-blue-50 to-blue-100/30 rounded-2xl border border-blue-100">
+              <div className="mb-4 md:mb-5 p-5 md:p-6 bg-gradient-to-br from-blue-50 to-blue-100/30 rounded-2xl border border-blue-200">
                 <div className="text-xs sm:text-sm font-semibold text-gray-600 mb-2">내 환산점수</div>
                 <div className="text-xl sm:text-2xl font-bold text-blue-600">
                   {selectedDept.convertedScore?.toFixed(2)}
@@ -559,11 +560,11 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
 
               {/* Cutoffs */}
               {selectedDept.cutoffs && selectedDept.cutoffs.length > 0 && (
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="text-xs sm:text-sm text-gray-600 mb-3 font-bold">최근 3개년 모집 인원 및 경쟁률</div>
-                  <div className="space-y-3">
+                <div className="pt-4 md:pt-5 border-t border-gray-200">
+                  <div className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 font-bold">최근 3개년 모집 인원 및 경쟁률</div>
+                  <div className="space-y-3 md:space-y-4">
                     {selectedDept.cutoffs.slice(0, 3).map((cutoff: any) => (
-                      <div key={cutoff.year} className="p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-100">
+                      <div key={cutoff.year} className="p-4 md:p-5 bg-gray-50 rounded-xl border border-gray-200 hover:bg-gray-100 transition-colors">
                         <div className="flex items-center justify-between mb-2.5">
                           <span className="text-sm sm:text-base font-bold text-gray-900">{cutoff.year}학년도</span>
                         </div>
@@ -582,6 +583,7 @@ export function UniversityAnalysisPage({ data, onBack }: UniversityAnalysisPageP
                   </div>
                 </div>
               )}
+              </div>
             </div>
           </div>
         </>
