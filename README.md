@@ -60,6 +60,7 @@ VITE_API_BASE_URL=http://localhost:8000/api
 자세한 내용:
 - [API 명세서](./API_SPECIFICATION.md) - 백엔드 개발자용
 - [백엔드 연동 가이드](./BACKEND_INTEGRATION.md) - 통합 가이드
+- [Swagger 연동 가이드](./SWAGGER_INTEGRATION.md) - Swagger 자동화
 
 ## 📁 프로젝트 구조
 

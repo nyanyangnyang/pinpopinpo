@@ -52,3 +52,6 @@ logs
 *.temp
 .cache/
 
+# Generated files
+src/generated/
+
