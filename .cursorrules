@@ -1,0 +1,513 @@
+# 대학 합격 예측 분석 사이트 - 프론트엔드 개발 규칙
+
+## ⚠️ 중요: 백엔드 개발 절대 금지
+**백엔드는 전문 개발자가 별도로 개발합니다. 절대 백엔드 관련 코드를 작성하지 마세요.**
+
+### 절대 하지 말 것:
+- ❌ FastAPI, Express, Django 등 백엔드 서버 코드 작성 금지
+- ❌ 데이터베이스 연결 코드 작성 금지
+- ❌ API 엔드포인트 구현 금지
+- ❌ 서버 설정 파일 작성 금지
+- ❌ 백엔드 로직 구현 금지
+
+### 할 수 있는 것:
+- ✅ 프론트엔드 컴포넌트 개발
+- ✅ Mock 데이터 사용 (임시 데이터)
+- ✅ UI/UX 구현
+- ✅ API 호출 함수 작성 (실제 구현은 백엔드 개발자가)
+
+### Mock 데이터만 사용
+```typescript
+// ✅ 좋은 예: Mock 데이터 사용
+const mockUniversities = [
+  { id: '1', name: '서울대학교', ranking: 1 },
+  { id: '2', name: '연세대학교', ranking: 2 },
+];
+
+function UniversityList() {
+  const [universities] = useState(mockUniversities);
+  return <div>{/* UI 렌더링 */}</div>;
+}
+
+// ❌ 나쁜 예: 백엔드 서버 코드
+// 이런 코드는 절대 작성하지 말 것!
+app.post('/api/predictions', async (req, res) => {
+  // ...
+});
+```
+
+## 핵심 원칙
+- **깨끗하고 읽기 쉬운 코드**: 다른 개발자가 한눈에 이해할 수 있게
+- **일관성**: 프로젝트 전체에서 동일한 패턴과 스타일 유지
+- **모듈화**: 재사용 가능한 작은 단위로 분리
+- **타입 안정성**: TypeScript를 적극 활용하여 버그 사전 방지
+- **프론트엔드만 집중**: 백엔드는 건드리지 않음
+
+## 기술 스택
+- React 18+
+- TypeScript (필수)
+- CSS Modules 또는 Tailwind CSS
+- React Router (라우팅)
+- 상태관리는 필요시 추가 (Redux, Zustand 등)
+
+## 폴더 구조 (반드시 이 구조 유지)
+```
+src/
+├── components/
+│   ├── common/          # 재사용 가능한 공통 컴포넌트
+│   │   ├── Button/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Button.module.css
+│   │   │   └── index.ts
+│   │   ├── Input/
+│   │   └── Card/
+│   └── features/        # 기능별 특화 컴포넌트
+│       ├── prediction/
+│       ├── university/
+│       └── student/
+├── pages/               # 페이지 컴포넌트
+│   ├── HomePage/
+│   ├── PredictionPage/
+│   └── ResultsPage/
+├── hooks/               # 커스텀 훅
+├── types/               # TypeScript 타입 정의
+├── utils/               # 유틸리티 함수
+├── constants/           # 상수 정의
+├── mockData/            # Mock 데이터 (임시 데이터)
+└── styles/              # 전역 스타일
+```
+
+## 데이터 처리 방법
+
+### Mock 데이터로 개발
+백엔드가 준비될 때까지 Mock 데이터를 사용합니다.
+
+```typescript
+// mockData/universities.ts
+export const mockUniversities = [
+  {
+    id: 'univ_001',
+    name: '서울대학교',
+    ranking: 1,
+    acceptanceRate: 12.5,
+    location: '서울',
+    requiredGpa: 4.3,
+  },
+  {
+    id: 'univ_002',
+    name: '연세대학교',
+    ranking: 2,
+    acceptanceRate: 15.3,
+    location: '서울',
+    requiredGpa: 4.1,
+  },
+  // ... 더 많은 데이터
+];
+
+// mockData/predictions.ts
+export const mockPredictions = [
+  {
+    id: 'pred_001',
+    universityName: '서울대학교',
+    probability: 75.5,
+    factors: {
+      gpa: 4.2,
+      satScore: 1480,
+      extracurriculars: '우수',
+    },
+  },
+  // ...
+];
+```
+
+### 컴포넌트에서 Mock 데이터 사용
+```typescript
+import { mockUniversities } from '@/mockData/universities';
+
+function UniversityList() {
+  const [universities] = useState(mockUniversities);
+  
+  return (
+    <div>
+      {universities.map(university => (
+        <UniversityCard key={university.id} university={university} />
+      ))}
+    </div>
+  );
+}
+```
+
+## 파일 및 폴더 명명 규칙
+- **컴포넌트**: PascalCase (예: `UserProfile.tsx`)
+- **훅**: camelCase, use로 시작 (예: `useUserData.ts`)
+- **유틸**: camelCase (예: `formatDate.ts`)
+- **타입**: PascalCase (예: `UserTypes.ts`)
+- **폴더**: kebab-case 또는 PascalCase 일관되게 사용
+
+## 컴포넌트 작성 규칙
+
+### 1. 컴포넌트는 작고 단순하게
+```typescript
+// ❌ 나쁜 예: 한 컴포넌트에 너무 많은 책임
+function PredictionPage() {
+  // 200줄의 코드...
+}
+
+// ✅ 좋은 예: 기능별로 분리
+function PredictionPage() {
+  return (
+    <div>
+      <PredictionForm />
+      <PredictionResults />
+      <RecommendationList />
+    </div>
+  );
+}
+```
+
+### 2. Props는 명확하게 타입 정의
+```typescript
+// ✅ 좋은 예
+interface ButtonProps {
+  text: string;
+  onClick: () => void;
+  variant?: 'primary' | 'secondary';
+  disabled?: boolean;
+}
+
+function Button({ text, onClick, variant = 'primary', disabled = false }: ButtonProps) {
+  return <button onClick={onClick} disabled={disabled}>{text}</button>;
+}
+```
+
+### 3. index.ts로 export 관리
+```typescript
+// components/common/Button/index.ts
+export { Button } from './Button';
+export type { ButtonProps } from './Button';
+
+// 사용할 때
+import { Button } from '@/components/common/Button';
+```
+
+## 상태 관리 규칙
+
+### 1. 로컬 상태는 useState
+```typescript
+function SearchForm() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filters, setFilters] = useState<FilterType>({});
+  // ...
+}
+```
+
+### 2. 복잡한 로직은 커스텀 훅으로 분리
+```typescript
+// hooks/usePredictionForm.ts
+export function usePredictionForm() {
+  const [formData, setFormData] = useState(initialData);
+  const [errors, setErrors] = useState({});
+  
+  const validateForm = () => { /* ... */ };
+  const handleSubmit = () => { /* ... */ };
+  const resetForm = () => { /* ... */ };
+  
+  return { formData, errors, validateForm, handleSubmit, resetForm };
+}
+
+// 컴포넌트에서 사용
+function PredictionForm() {
+  const { formData, errors, handleSubmit } = usePredictionForm();
+  // 컴포넌트는 UI만 집중
+}
+```
+
+## 코드 작성 스타일
+
+### 1. 명확한 변수명 사용
+```typescript
+// ❌ 나쁜 예
+const d = new Date();
+const arr = data.map(x => x.val);
+
+// ✅ 좋은 예
+const currentDate = new Date();
+const universityNames = universities.map(university => university.name);
+```
+
+### 2. Early Return 패턴 사용
+```typescript
+// ✅ 좋은 예
+function UniversityCard({ university }: Props) {
+  if (!university) return null;
+  if (university.isHidden) return null;
+  
+  return (
+    <div>
+      {/* 실제 컨텐츠 */}
+    </div>
+  );
+}
+```
+
+### 3. 조건부 렌더링은 명확하게
+```typescript
+// ✅ 좋은 예
+function PredictionResult({ prediction }: Props) {
+  const showRecommendations = prediction.probability > 70;
+  const hasWarnings = prediction.warnings.length > 0;
+  
+  return (
+    <div>
+      {showRecommendations && <RecommendationList />}
+      {hasWarnings && <WarningBanner warnings={prediction.warnings} />}
+    </div>
+  );
+}
+```
+
+### 4. 매직 넘버/문자열 상수로 관리
+```typescript
+// constants/index.ts
+export const PREDICTION_THRESHOLDS = {
+  HIGH: 70,
+  MEDIUM: 50,
+  LOW: 30,
+} as const;
+
+// 사용
+if (probability > PREDICTION_THRESHOLDS.HIGH) {
+  // ...
+}
+```
+
+## 주석 작성 규칙
+
+### 1. 복잡한 로직에만 주석
+```typescript
+// ✅ 좋은 예
+// GPA를 4.0 스케일에서 100점 만점으로 변환
+function convertGpaToPercentage(gpa: number): number {
+  return (gpa / 4.0) * 100;
+}
+
+// ❌ 불필요한 주석
+// 유저 이름을 가져옴
+function getUserName() {
+  return user.name; // 이름 반환
+}
+```
+
+### 2. TODO 주석 활용
+```typescript
+// TODO: 페이지네이션 추가 필요
+// FIXME: 특정 조건에서 무한 루프 발생
+// NOTE: 백엔드 API 연결 전 임시 Mock 데이터 사용 중
+```
+
+## 에러 처리
+
+### 1. 에러 바운더리 사용
+```typescript
+// components/common/ErrorBoundary.tsx
+class ErrorBoundary extends React.Component<Props, State> {
+  // ... 에러 바운더리 구현
+}
+
+// App.tsx
+function App() {
+  return (
+    <ErrorBoundary>
+      <Router />
+    </ErrorBoundary>
+  );
+}
+```
+
+### 2. 사용자 친화적인 에러 메시지
+```typescript
+function PredictionForm() {
+  const [error, setError] = useState<string | null>(null);
+  
+  const handleSubmit = () => {
+    try {
+      // 로직...
+    } catch (err) {
+      setError('예측 생성에 실패했습니다. 입력 정보를 확인해주세요.');
+    }
+  };
+  
+  return (
+    <form>
+      {error && <ErrorMessage message={error} />}
+      {/* ... */}
+    </form>
+  );
+}
+```
+
+## 성능 최적화 (방대한 데이터를 위한)
+
+### 1. 불필요한 리렌더링 방지
+```typescript
+import { memo, useMemo, useCallback } from 'react';
+
+// 리스트 아이템은 memo로 감싸기
+const UniversityCard = memo(({ university }: Props) => {
+  return <div>{/* ... */}</div>;
+});
+
+// 계산 비용이 큰 작업은 useMemo
+function PredictionList({ predictions }: Props) {
+  const sortedPredictions = useMemo(
+    () => predictions.sort((a, b) => b.probability - a.probability),
+    [predictions]
+  );
+  
+  return <div>{/* ... */}</div>;
+}
+
+// 함수는 useCallback
+function SearchForm() {
+  const handleSearch = useCallback((term: string) => {
+    // 검색 로직
+  }, []);
+  
+  return <SearchInput onSearch={handleSearch} />;
+}
+```
+
+### 2. 리스트 렌더링 최적화
+```typescript
+// ✅ 가상화 라이브러리 사용 (react-window 또는 react-virtual)
+import { FixedSizeList } from 'react-window';
+
+function LargeUniversityList({ universities }: Props) {
+  return (
+    <FixedSizeList
+      height={600}
+      itemCount={universities.length}
+      itemSize={80}
+    >
+      {({ index, style }) => (
+        <div style={style}>
+          <UniversityCard university={universities[index]} />
+        </div>
+      )}
+    </FixedSizeList>
+  );
+}
+```
+
+### 3. 이미지 최적화
+```typescript
+// ✅ lazy loading
+<img 
+  src={university.logo} 
+  alt={university.name}
+  loading="lazy"
+/>
+
+// ✅ React.lazy로 코드 스플리팅
+const PredictionPage = lazy(() => import('@/pages/PredictionPage'));
+```
+
+## 타입 정의 규칙
+
+### 1. 인터페이스는 명확하게
+```typescript
+// types/university.ts
+export interface University {
+  id: string;
+  name: string;
+  ranking: number;
+  location: string;
+  acceptanceRate: number;
+}
+
+export interface UniversityFilter {
+  minRanking?: number;
+  maxRanking?: number;
+  locations?: string[];
+}
+
+// types/prediction.ts
+export interface Prediction {
+  id: string;
+  studentId: string;
+  universityId: string;
+  probability: number;
+  createdAt: string;
+}
+```
+
+### 2. 타입 재사용
+```typescript
+// ✅ Utility Types 활용
+type PartialUniversity = Partial<University>;
+type UniversityPreview = Pick<University, 'id' | 'name' | 'ranking'>;
+type UniversityUpdate = Omit<University, 'id' | 'createdAt'>;
+```
+
+## 절대 하지 말아야 할 것들
+
+❌ **백엔드 코드 작성 절대 금지**
+```typescript
+// 이런 코드는 절대 작성하지 말 것!
+// FastAPI, Express, 데이터베이스 연결 등
+```
+
+❌ **any 타입 사용 금지**
+```typescript
+// 나쁜 예
+const data: any = await fetchData();
+
+// 좋은 예
+const data: University[] = await fetchData();
+```
+
+❌ **인라인 스타일 남발 금지**
+```typescript
+// 나쁜 예
+<div style={{ marginTop: 20, padding: 10, backgroundColor: '#fff' }}>
+
+// 좋은 예 - CSS 모듈이나 Tailwind 사용
+<div className={styles.container}>
+```
+
+❌ **중복 코드 방치 금지**
+```typescript
+// 같은 로직이 3번 이상 반복되면 함수나 컴포넌트로 분리
+```
+
+❌ **거대한 컴포넌트 금지**
+```typescript
+// 100줄 이상이면 분리 고려
+// 200줄 이상이면 반드시 분리
+```
+
+## 코드 리뷰 체크리스트 (스스로 확인)
+
+작성한 코드에 대해 다음을 확인:
+- [ ] 백엔드 관련 코드를 작성하지 않았는가?
+- [ ] 컴포넌트가 50줄 이하인가?
+- [ ] 함수/변수명이 명확한가?
+- [ ] 타입이 모두 정의되어 있는가?
+- [ ] any 타입을 사용하지 않았는가?
+- [ ] 중복 코드가 없는가?
+- [ ] 에러 처리가 되어 있는가?
+- [ ] 다른 개발자가 봐도 이해하기 쉬운가?
+
+## 개발 시 항상 생각할 것
+1. "백엔드는 절대 건드리지 않는다"
+2. "이 코드를 3개월 후에 다른 사람이 봐도 이해할 수 있을까?"
+3. "이 컴포넌트는 재사용 가능한가?"
+4. "더 간단하게 작성할 방법은 없을까?"
+5. "타입이 명확하게 정의되어 있는가?"
+
+## 백엔드 개발자와 협업 시
+- 프론트엔드는 Mock 데이터로 완성
+- 백엔드 개발자에게 필요한 데이터 형태만 전달
+- 실제 API 연결은 백엔드 개발자가 담당
+
+이 규칙들을 따르면 유지보수하기 쉽고 확장 가능한 프론트엔드 코드가 됩니다.

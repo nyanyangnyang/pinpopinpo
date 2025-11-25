@@ -1,0 +1,2 @@
+export { ProbabilityBar } from './ProbabilityBar';
+

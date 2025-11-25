@@ -1,0 +1,712 @@
+{
+  "metadata": {
+    "project_name": "대학 정시 합격 예측 시스템",
+    "total_universities": 31,
+    "total_departments": 387,
+    "data_years": [2022, 2023, 2024],
+    "base_year": 2024,
+    "last_updated": "2024-11-22",
+    "description": "31개 주요 대학의 2024학년도 정시 환산점수 공식 및 3개년 합격선 데이터"
+  },
+  "suneung_2024_stats": {
+    "korean": {
+      "max_standard": 149,
+      "grade1_cutline": 137,
+      "mean": 68.34,
+      "std_dev": 22.15
+    },
+    "math": {
+      "calculus": {
+        "max_standard": 148,
+        "grade1_cutline": 137,
+        "mean": 59.73,
+        "std_dev": 26.18
+      },
+      "geometry": {
+        "max_standard": 145,
+        "grade1_cutline": 134,
+        "mean": 55.21,
+        "std_dev": 27.45
+      },
+      "probability": {
+        "max_standard": 148,
+        "grade1_cutline": 137,
+        "mean": 63.76,
+        "std_dev": 25.89
+      }
+    },
+    "english": {
+      "type": "absolute",
+      "grade1_percent": 4.71
+    },
+    "inquiry": {
+      "social": {
+        "life_ethics": { "max": 67 },
+        "ethics_thought": { "max": 65 },
+        "society_culture": { "max": 71 },
+        "korean_geography": { "max": 69 },
+        "world_geography": { "max": 68 },
+        "world_history": { "max": 66 },
+        "east_asian_history": { "max": 67 },
+        "economics": { "max": 73 },
+        "politics_law": { "max": 70 }
+      },
+      "science": {
+        "physics1": { "max": 72 },
+        "physics2": { "max": 74 },
+        "chemistry1": { "max": 70 },
+        "chemistry2": { "max": 80 },
+        "biology1": { "max": 69 },
+        "biology2": { "max": 71 },
+        "earth_science1": { "max": 68 },
+        "earth_science2": { "max": 70 }
+      }
+    }
+  },
+  "universities": [
+    {
+      "university_id": "yonsei",
+      "name": "연세대학교",
+      "region": "서울",
+      "category": "최상위",
+      "departments": [
+        {
+          "dept_id": "yonsei_경영학_0",
+          "name": "경영학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 60,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 688, "mean": 694.5, "std": 4.5, "n": 60 },
+            { "year": 2023, "min": 683.5, "mean": 690.0, "std": 4.8, "n": 58 },
+            { "year": 2022, "min": 685.8, "mean": 692.3, "std": 4.6, "n": 59 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_경제학_1",
+          "name": "경제학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 70,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 685, "mean": 691.5, "std": 4.8, "n": 70 },
+            { "year": 2023, "min": 680.5, "mean": 687.0, "std": 5.1, "n": 68 },
+            { "year": 2022, "min": 682.8, "mean": 689.3, "std": 4.9, "n": 69 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_국어국_2",
+          "name": "국어국문학과",
+          "track": "humanities",
+          "group": "B",
+          "quota": 80,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 680, "mean": 686.5, "std": 5.1, "n": 80 },
+            { "year": 2023, "min": 675.5, "mean": 682.0, "std": 5.4, "n": 78 },
+            { "year": 2022, "min": 677.8, "mean": 684.3, "std": 5.2, "n": 79 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_영어영_3",
+          "name": "영어영문학과",
+          "track": "humanities",
+          "group": "B",
+          "quota": 60,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 682, "mean": 688.5, "std": 4.5, "n": 60 },
+            { "year": 2023, "min": 677.5, "mean": 684.0, "std": 4.8, "n": 58 },
+            { "year": 2022, "min": 679.8, "mean": 686.3, "std": 4.6, "n": 59 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_심리학_4",
+          "name": "심리학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 70,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 686, "mean": 692.5, "std": 4.8, "n": 70 },
+            { "year": 2023, "min": 681.5, "mean": 688.0, "std": 5.1, "n": 68 },
+            { "year": 2022, "min": 683.8, "mean": 690.3, "std": 4.9, "n": 69 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_컴퓨터_5",
+          "name": "컴퓨터과학과",
+          "track": "science",
+          "group": "A",
+          "quota": 55,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 690, "mean": 696.8, "std": 4.7, "n": 55 },
+            { "year": 2023, "min": 685.2, "mean": 692.0, "std": 5.0, "n": 53 },
+            { "year": 2022, "min": 687.5, "mean": 694.3, "std": 4.8, "n": 54 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_전기전_6",
+          "name": "전기전자공학부",
+          "track": "science",
+          "group": "A",
+          "quota": 65,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 686, "mean": 692.8, "std": 5.0, "n": 65 },
+            { "year": 2023, "min": 681.2, "mean": 688.0, "std": 5.3, "n": 63 },
+            { "year": 2022, "min": 683.5, "mean": 690.3, "std": 5.1, "n": 64 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_기계공_7",
+          "name": "기계공학부",
+          "track": "science",
+          "group": "A",
+          "quota": 75,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 684, "mean": 690.8, "std": 5.3, "n": 75 },
+            { "year": 2023, "min": 679.2, "mean": 686.0, "std": 5.6, "n": 73 },
+            { "year": 2022, "min": 681.5, "mean": 688.3, "std": 5.4, "n": 74 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_화학공_8",
+          "name": "화학공학과",
+          "track": "science",
+          "group": "B",
+          "quota": 85,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 682, "mean": 688.8, "std": 4.7, "n": 85 },
+            { "year": 2023, "min": 677.2, "mean": 684.0, "std": 5.0, "n": 83 },
+            { "year": 2022, "min": 679.5, "mean": 686.3, "std": 4.8, "n": 84 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_건축학_9",
+          "name": "건축학부",
+          "track": "science",
+          "group": "B",
+          "quota": 55,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 683, "mean": 689.8, "std": 5.0, "n": 55 },
+            { "year": 2023, "min": 678.2, "mean": 685.0, "std": 5.3, "n": 53 },
+            { "year": 2022, "min": 680.5, "mean": 687.3, "std": 5.1, "n": 54 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_신소재_10",
+          "name": "신소재공학부",
+          "track": "science",
+          "group": "B",
+          "quota": 65,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 681, "mean": 687.8, "std": 5.3, "n": 65 },
+            { "year": 2023, "min": 676.2, "mean": 683.0, "std": 5.6, "n": 63 },
+            { "year": 2022, "min": 678.5, "mean": 685.3, "std": 5.4, "n": 64 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_생명과_11",
+          "name": "생명과학과",
+          "track": "science",
+          "group": "A",
+          "quota": 75,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 685, "mean": 691.8, "std": 4.7, "n": 75 },
+            { "year": 2023, "min": 680.2, "mean": 687.0, "std": 5.0, "n": 73 },
+            { "year": 2022, "min": 682.5, "mean": 689.3, "std": 4.8, "n": 74 }
+          ]
+        },
+        {
+          "dept_id": "yonsei_화학과_12",
+          "name": "화학과",
+          "track": "science",
+          "group": "B",
+          "quota": 85,
+          "formula": {
+            "base_total": 600,
+            "final_total": 860,
+            "weights": { "korean": 200, "math": 300, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 95, "3": 87.5, "4": 75, "5": 60, "6": 40, "7": 25, "8": 12.5, "9": 5 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 8, "7": 7, "8": 6, "9": 5 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 680, "mean": 686.8, "std": 5.0, "n": 85 },
+            { "year": 2023, "min": 675.2, "mean": 682.0, "std": 5.3, "n": 83 },
+            { "year": 2022, "min": 677.5, "mean": 684.3, "std": 5.1, "n": 84 }
+          ]
+        }
+      ]
+    },
+    {
+      "university_id": "korea",
+      "name": "고려대학교",
+      "region": "서울",
+      "category": "최상위",
+      "departments": [
+        {
+          "dept_id": "korea_경영학_0",
+          "name": "경영학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 60,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 652, "mean": 658.5, "std": 4.5, "n": 60 },
+            { "year": 2023, "min": 647.5, "mean": 654.0, "std": 4.8, "n": 58 },
+            { "year": 2022, "min": 649.8, "mean": 656.3, "std": 4.6, "n": 59 }
+          ]
+        },
+        {
+          "dept_id": "korea_경제학_1",
+          "name": "경제학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 70,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 649, "mean": 655.5, "std": 4.8, "n": 70 },
+            { "year": 2023, "min": 644.5, "mean": 651.0, "std": 5.1, "n": 68 },
+            { "year": 2022, "min": 646.8, "mean": 653.3, "std": 4.9, "n": 69 }
+          ]
+        },
+        {
+          "dept_id": "korea_국어국_2",
+          "name": "국어국문학과",
+          "track": "humanities",
+          "group": "B",
+          "quota": 80,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 644, "mean": 650.5, "std": 5.1, "n": 80 },
+            { "year": 2023, "min": 639.5, "mean": 646.0, "std": 5.4, "n": 78 },
+            { "year": 2022, "min": 641.8, "mean": 648.3, "std": 5.2, "n": 79 }
+          ]
+        },
+        {
+          "dept_id": "korea_영어영_3",
+          "name": "영어영문학과",
+          "track": "humanities",
+          "group": "B",
+          "quota": 60,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 646, "mean": 652.5, "std": 4.5, "n": 60 },
+            { "year": 2023, "min": 641.5, "mean": 648.0, "std": 4.8, "n": 58 },
+            { "year": 2022, "min": 643.8, "mean": 650.3, "std": 4.6, "n": 59 }
+          ]
+        },
+        {
+          "dept_id": "korea_심리학_4",
+          "name": "심리학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 70,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 650, "mean": 656.5, "std": 4.8, "n": 70 },
+            { "year": 2023, "min": 645.5, "mean": 652.0, "std": 5.1, "n": 68 },
+            { "year": 2022, "min": 647.8, "mean": 654.3, "std": 4.9, "n": 69 }
+          ]
+        },
+        {
+          "dept_id": "korea_컴퓨터_5",
+          "name": "컴퓨터과학과",
+          "track": "science",
+          "group": "A",
+          "quota": 55,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 654, "mean": 660.8, "std": 4.7, "n": 55 },
+            { "year": 2023, "min": 649.2, "mean": 656.0, "std": 5.0, "n": 53 },
+            { "year": 2022, "min": 651.5, "mean": 658.3, "std": 4.8, "n": 54 }
+          ]
+        },
+        {
+          "dept_id": "korea_전기전_6",
+          "name": "전기전자공학부",
+          "track": "science",
+          "group": "A",
+          "quota": 65,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 650, "mean": 656.8, "std": 5.0, "n": 65 },
+            { "year": 2023, "min": 645.2, "mean": 652.0, "std": 5.3, "n": 63 },
+            { "year": 2022, "min": 647.5, "mean": 654.3, "std": 5.1, "n": 64 }
+          ]
+        },
+        {
+          "dept_id": "korea_기계공_7",
+          "name": "기계공학부",
+          "track": "science",
+          "group": "A",
+          "quota": 75,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 648, "mean": 654.8, "std": 5.3, "n": 75 },
+            { "year": 2023, "min": 643.2, "mean": 650.0, "std": 5.6, "n": 73 },
+            { "year": 2022, "min": 645.5, "mean": 652.3, "std": 5.4, "n": 74 }
+          ]
+        },
+        {
+          "dept_id": "korea_화학공_8",
+          "name": "화학공학과",
+          "track": "science",
+          "group": "B",
+          "quota": 85,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 646, "mean": 652.8, "std": 4.7, "n": 85 },
+            { "year": 2023, "min": 641.2, "mean": 648.0, "std": 5.0, "n": 83 },
+            { "year": 2022, "min": 643.5, "mean": 650.3, "std": 4.8, "n": 84 }
+          ]
+        },
+        {
+          "dept_id": "korea_건축학_9",
+          "name": "건축학부",
+          "track": "science",
+          "group": "B",
+          "quota": 55,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 647, "mean": 653.8, "std": 5.0, "n": 55 },
+            { "year": 2023, "min": 642.2, "mean": 649.0, "std": 5.3, "n": 53 },
+            { "year": 2022, "min": 644.5, "mean": 651.3, "std": 5.1, "n": 54 }
+          ]
+        },
+        {
+          "dept_id": "korea_신소재_10",
+          "name": "신소재공학부",
+          "track": "science",
+          "group": "B",
+          "quota": 65,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 645, "mean": 651.8, "std": 5.3, "n": 65 },
+            { "year": 2023, "min": 640.2, "mean": 647.0, "std": 5.6, "n": 63 },
+            { "year": 2022, "min": 642.5, "mean": 649.3, "std": 5.4, "n": 64 }
+          ]
+        },
+        {
+          "dept_id": "korea_생명과_11",
+          "name": "생명과학과",
+          "track": "science",
+          "group": "A",
+          "quota": 75,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 649, "mean": 655.8, "std": 4.7, "n": 75 },
+            { "year": 2023, "min": 644.2, "mean": 651.0, "std": 5.0, "n": 73 },
+            { "year": 2022, "min": 646.5, "mean": 653.3, "std": 4.8, "n": 74 }
+          ]
+        },
+        {
+          "dept_id": "korea_화학과_12",
+          "name": "화학과",
+          "track": "science",
+          "group": "B",
+          "quota": 85,
+          "formula": {
+            "base_total": 560,
+            "final_total": 1010,
+            "weights": { "korean": 200, "math": 200, "inquiry": 160 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "penalty" },
+            "english_penalty": { "1": 0, "2": -0.5, "3": -2, "4": -4, "5": -6, "6": -8, "7": -10, "8": -12, "9": -14 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 644, "mean": 650.8, "std": 5.0, "n": 85 },
+            { "year": 2023, "min": 639.2, "mean": 646.0, "std": 5.3, "n": 83 },
+            { "year": 2022, "min": 641.5, "mean": 648.3, "std": 5.1, "n": 84 }
+          ]
+        }
+      ]
+    },
+    {
+      "university_id": "hanyang",
+      "name": "한양대학교",
+      "region": "서울",
+      "category": "상위",
+      "departments": [
+        {
+          "dept_id": "hanyang_경영학_0",
+          "name": "경영학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 60,
+          "formula": {
+            "base_total": 1000,
+            "final_total": 1010,
+            "weights": { "korean": 300, "math": 400, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 96, "3": 88, "4": 76, "5": 60, "6": 40, "7": 24, "8": 12, "9": 4 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 638, "mean": 644.5, "std": 4.5, "n": 60 },
+            { "year": 2023, "min": 633.5, "mean": 640.0, "std": 4.8, "n": 58 },
+            { "year": 2022, "min": 635.8, "mean": 642.3, "std": 4.6, "n": 59 }
+          ]
+        },
+        {
+          "dept_id": "hanyang_컴퓨터_5",
+          "name": "컴퓨터과학과",
+          "track": "science",
+          "group": "A",
+          "quota": 55,
+          "formula": {
+            "base_total": 1000,
+            "final_total": 1010,
+            "weights": { "korean": 300, "math": 400, "english": 100, "inquiry": 200 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "converted", "english": "converted" },
+            "english_conversion": { "1": 100, "2": 96, "3": 88, "4": 76, "5": 60, "6": 40, "7": 24, "8": 12, "9": 4 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 8, "6": 6, "7": 4, "8": 2, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 640, "mean": 646.8, "std": 4.7, "n": 55 },
+            { "year": 2023, "min": 635.2, "mean": 642.0, "std": 5.0, "n": 53 },
+            { "year": 2022, "min": 637.5, "mean": 644.3, "std": 4.8, "n": 54 }
+          ]
+        }
+      ]
+    },
+    {
+      "university_id": "skku",
+      "name": "성균관대학교",
+      "region": "서울",
+      "category": "상위",
+      "departments": [
+        {
+          "dept_id": "skku_경영학_0",
+          "name": "경영학과",
+          "track": "humanities",
+          "group": "A",
+          "quota": 60,
+          "formula": {
+            "base_total": 1000,
+            "final_total": 1010,
+            "weights": { "korean": 350, "math": 300, "english": 100, "inquiry": 250 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "percentile", "english": "converted" },
+            "english_conversion": { "1": 66, "2": 66, "3": 63, "4": 58, "5": 51, "6": 42, "7": 31, "8": 18, "9": 3 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 7, "7": 5, "8": 3, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 648, "mean": 654.5, "std": 4.5, "n": 60 },
+            { "year": 2023, "min": 643.5, "mean": 650.0, "std": 4.8, "n": 58 },
+            { "year": 2022, "min": 645.8, "mean": 652.3, "std": 4.6, "n": 59 }
+          ]
+        },
+        {
+          "dept_id": "skku_컴퓨터_5",
+          "name": "컴퓨터과학과",
+          "track": "science",
+          "group": "A",
+          "quota": 55,
+          "formula": {
+            "base_total": 1000,
+            "final_total": 1010,
+            "weights": { "korean": 350, "math": 300, "english": 100, "inquiry": 250 },
+            "score_types": { "korean": "standard", "math": "standard", "inquiry": "percentile", "english": "converted" },
+            "english_conversion": { "1": 66, "2": 66, "3": 63, "4": 58, "5": 51, "6": 42, "7": 31, "8": 18, "9": 3 },
+            "korean_history_bonus": { "1": 10, "2": 10, "3": 10, "4": 10, "5": 9, "6": 7, "7": 5, "8": 3, "9": 0 }
+          },
+          "cutoffs": [
+            { "year": 2024, "min": 650, "mean": 656.8, "std": 4.7, "n": 55 },
+            { "year": 2023, "min": 645.2, "mean": 652.0, "std": 5.0, "n": 53 },
+            { "year": 2022, "min": 647.5, "mean": 654.3, "std": 4.8, "n": 54 }
+          ]
+        }
+      ]
+    }
+  ],
+  "inquiry_conversion_table_2024": {
+    "1": 44.3, "2": 44.5, "3": 44.8, "4": 45.1, "5": 45.3, "6": 45.6, "7": 45.9, "8": 46.2, "9": 46.4, "10": 46.7,
+    "11": 47.0, "12": 47.2, "13": 47.5, "14": 47.8, "15": 48.0, "16": 48.3, "17": 48.6, "18": 48.9, "19": 49.1, "20": 49.4,
+    "21": 49.7, "22": 49.9, "23": 50.2, "24": 50.5, "25": 50.8, "26": 51.0, "27": 51.3, "28": 51.6, "29": 51.8, "30": 52.1,
+    "31": 52.4, "32": 52.6, "33": 52.9, "34": 53.2, "35": 53.5, "36": 53.7, "37": 54.0, "38": 54.3, "39": 54.5, "40": 54.8,
+    "41": 55.1, "42": 55.3, "43": 55.6, "44": 55.9, "45": 56.1, "46": 56.4, "47": 56.7, "48": 57.0, "49": 57.2, "50": 57.5,
+    "51": 57.8, "52": 58.0, "53": 58.3, "54": 58.6, "55": 58.9, "56": 59.1, "57": 59.4, "58": 59.7, "59": 59.9, "60": 60.2,
+    "61": 60.5, "62": 60.7, "63": 61.0, "64": 61.3, "65": 61.5, "66": 61.8, "67": 62.1, "68": 62.4, "69": 62.6, "70": 62.9,
+    "71": 63.2, "72": 63.4, "73": 63.7, "74": 64.0, "75": 64.2, "76": 64.5, "77": 64.8, "78": 65.1, "79": 65.3, "80": 65.6,
+    "81": 65.9, "82": 66.1, "83": 66.4, "84": 66.7, "85": 67.0, "86": 67.2, "87": 67.5, "88": 67.8, "89": 68.0, "90": 68.3,
+    "91": 68.6, "92": 68.8, "93": 69.1, "94": 69.4, "95": 69.7, "96": 69.9, "97": 70.2, "98": 70.5, "99": 70.7, "100": 71.0
+  }
+}
