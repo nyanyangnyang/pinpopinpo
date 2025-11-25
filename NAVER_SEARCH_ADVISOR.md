@@ -7,7 +7,7 @@ Vercel 배포 후 네이버 검색에 사이트를 등록하는 방법입니다.
 ## 📋 사전 준비
 
 ✅ Vercel 배포 완료
-✅ 도메인 주소 확보 (예: `https://pinpoint.vercel.app`)
+✅ 커스텀 도메인 연결 완료 (예: `https://pinpointai.co.kr`)
 
 ---
 
@@ -29,7 +29,7 @@ https://searchadvisor.naver.com/
 2. **"사이트 등록"** 버튼 클릭
 3. 배포된 사이트 URL 입력
    ```
-   https://pinpoint.vercel.app
+   https://pinpointai.co.kr
    ```
 4. **"확인"** 클릭
 
@@ -90,7 +90,7 @@ https://searchadvisor.naver.com/
 2. **"사이트맵 제출"** 클릭
 3. 사이트맵 URL 입력
    ```
-   https://pinpoint.vercel.app/sitemap.xml
+   https://pinpointai.co.kr/sitemap.xml
    ```
 4. **"확인"** 클릭
 
@@ -108,7 +108,7 @@ https://searchadvisor.naver.com/
 2. **"robots.txt"** 클릭
 3. 자동으로 검증됨
    ```
-   https://pinpoint.vercel.app/robots.txt
+   https://pinpointai.co.kr/robots.txt
    ```
 
 ---
@@ -139,7 +139,7 @@ https://searchadvisor.naver.com/
 ### 검색 반영 확인
 
 ```
-site:pinpoint.vercel.app
+site:pinpointai.co.kr
 ```
 
 네이버 검색창에 위 명령어를 입력하여 색인 상태 확인
