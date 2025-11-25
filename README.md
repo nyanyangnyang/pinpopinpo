@@ -26,6 +26,10 @@
 # 의존성 설치
 npm install
 
+# 환경변수 설정 (최초 1회)
+cp .env.example .env
+# .env 파일을 열어 필요한 값 수정
+
 # 개발 서버 실행 (http://localhost:3000)
 npm run dev
 
@@ -33,10 +37,39 @@ npm run dev
 npm run build
 ```
 
+## 🔌 백엔드 연동
+
+이 프로젝트는 **Mock 모드**와 **실제 API 모드**를 전환할 수 있습니다.
+
+### Mock 모드 (현재 기본)
+```env
+VITE_USE_MOCK=true
+```
+- 백엔드 없이 완전히 작동
+- 로컬 Mock 데이터 사용
+- 개발 및 테스트에 적합
+
+### 실제 API 모드
+```env
+VITE_USE_MOCK=false
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+- 백엔드 서버와 연동
+- 실제 API 호출
+
+자세한 내용:
+- [API 명세서](./API_SPECIFICATION.md) - 백엔드 개발자용
+- [백엔드 연동 가이드](./BACKEND_INTEGRATION.md) - 통합 가이드
+
 ## 📁 프로젝트 구조
 
 ```
 src/
+├── services/           # API 서비스 레이어
+│   ├── api.ts          # 기본 API 설정
+│   ├── authService.ts  # 인증 API
+│   ├── universityService.ts
+│   └── predictionService.ts
 ├── types/              # TypeScript 타입 정의
 ├── constants/          # 상수 관리
 ├── hooks/              # 커스텀 훅
@@ -79,6 +112,8 @@ src/
 4. **공통 컴포넌트** - 재사용 가능한 작은 컴포넌트 생성
 5. **에러 처리** - ErrorBoundary 및 사용자 친화적 메시지
 6. **성능 최적화** - memo, useMemo, useCallback 적용
+7. **API 서비스 레이어** - Mock/실제 API 전환 가능
+8. **백엔드 연동 준비** - API 명세서 및 연동 가이드 완료
 
 ## 📚 원본 디자인
 

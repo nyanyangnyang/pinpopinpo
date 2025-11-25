@@ -46,9 +46,25 @@ export interface SavedScoreData {
 }
 
 export interface User {
-  id?: string;
+  id: string;
   nickname: string;
   profile_image?: string;
   email?: string;
+  created_at?: string;
+}
+
+/**
+ * 로그인 제공자
+ */
+export type AuthProvider = 'kakao' | 'google' | 'naver';
+
+/**
+ * 인증 상태
+ */
+export interface AuthState {
+  isAuthenticated: boolean;
+  user: User | null;
+  accessToken: string | null;
+  refreshToken: string | null;
 }
 

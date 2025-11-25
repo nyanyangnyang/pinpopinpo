@@ -17,6 +17,8 @@ export type {
   UserScores,
   SavedScoreData,
   User,
+  AuthProvider,
+  AuthState,
 } from './student';
 
 export type {
