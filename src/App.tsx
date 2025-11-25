@@ -11,13 +11,15 @@ import { ProfilePage } from './components/ProfilePage';
 import { ApplicationStrategyPage } from './components/ApplicationStrategyPage';
 import { Footer } from './components/Footer';
 import { KakaoLoginModal } from './components/KakaoLoginModal';
-import { ErrorBoundary } from './components/common';
+import { ErrorBoundary, ToastContainer } from './components/common';
+import { useToast } from './hooks';
 
 function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'score-input' | 'university-selection' | 'result' | 'profile' | 'pricing' | 'ai-strategy'>('home');
   const [analysisData, setAnalysisData] = useState<any>(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
+  const { toasts, success, error, info } = useToast();
 
   // localStorage에서 데이터 복원
   useEffect(() => {
@@ -125,6 +127,7 @@ function App() {
   if (currentPage === 'home') {
     return (
       <>
+        <ToastContainer toasts={toasts} />
         <div className="min-h-screen bg-white">
           {/* 할인 배너 */}
           <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-3 px-4 shadow-lg border-b border-slate-700">
@@ -169,7 +172,9 @@ function App() {
   // 성적 입력 페이지
   if (currentPage === 'score-input') {
     return (
-      <div className="min-h-screen bg-white">
+      <>
+        <ToastContainer toasts={toasts} />
+        <div className="min-h-screen bg-white">
         <Navigation 
           onScoreInputClick={handleGoToScoreInput}
           onUniversitySelectionClick={handleGoToUniversitySelection}
@@ -181,7 +186,8 @@ function App() {
         />
         <ScoreInputPage onComplete={handleGoToUniversitySelection} />
         <Footer />
-      </div>
+        </div>
+      </>
     );
   }
 

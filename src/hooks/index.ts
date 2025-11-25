@@ -4,4 +4,5 @@ export { useLocalStorage } from './useLocalStorage';
 export { useScoreForm } from './useScoreForm';
 export { useAuth } from './useAuth';
 export { useProbabilityColor } from './useProbabilityColor';
+export { useToast } from './useToast';
 
